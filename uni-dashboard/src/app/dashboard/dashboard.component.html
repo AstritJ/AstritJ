@@ -1,0 +1,18 @@
+<div class="container-fluid my-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="d-flex flex-column m-5">
+        <app-parameter name="Visibility" value="{{visibility}}" (valueChange)="valueChange($event)"></app-parameter>
+        <app-parameter name="Presence" value="{{presence}}" (valueChange)="valueChange($event)"></app-parameter>
+        <app-parameter name="Opennes" value="{{opennes}}" (valueChange)="valueChange($event)"></app-parameter>
+        <app-parameter name="Exellence" value="{{exellence}}" (valueChange)="valueChange($event)"></app-parameter>
+      </div>
+    </div>
+    <div class="col-md-9 my-5">
+      <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+# Selektoj te gjithe Profesoret te cilet kan Publikime ne rangun (50-500)
+
+SELECT U.Uni_ID, U.University_Name, P.Professor_Name, G.Publications, G.Citations
+FROM professors P 
+INNER JOIN google_scholar G ON P.Professor_ID = G.Professor_ID
+INNER JOIN universities U ON U.Uni_ID = P.Uni_ID
+WHERE `Publications`>50 AND `Publications`<500
+ORDER BY G.Publications DESC
+
+
+# Selektoj te gjithe Profesoret te cilet kan Publikime
+
+SELECT U.Uni_ID, U.University_Name, P.Professor_Name, G.Publications, G.Citations
+FROM professors P 
+INNER JOIN google_scholar G ON P.Professor_ID = G.Professor_ID
+INNER JOIN universities U ON U.Uni_ID = P.Uni_ID
+WHERE `Publications`>0
+
+
+# Selektoj te gjithe Profesoret te cilet NUK kan Publikime
+
+SELECT U.Uni_ID, U.University_Name, P.Professor_Name, G.Publications, G.Citations
+FROM professors P 
+INNER JOIN google_scholar G ON P.Professor_ID = G.Professor_ID
+INNER JOIN universities U ON U.Uni_ID = P.Uni_ID
+WHERE `Publications`=0
+
+
+# Gjej Backlinks per secilin Universitet dhe sortoj vlera me e madhe tek ajo me e vogel
+
+SELECT U.Uni_ID, U.University_Name, B.NrOfBacklinks
+FROM universities U
+INNER JOIN backlinks B ON U.Uni_ID = B.Uni_ID
+ORDER BY B.NrOfBacklinks DESC

@@ -1,0 +1,4 @@
+<div class="p-2">
+  <p>{{name}}</p>
+  <mat-slider title="{{name}}" thumbLabel [displayWith]="formatLabel" min="1" max="100" value="{{value}}" (input)="onInputChange($event)"></mat-slider>
+</div>
